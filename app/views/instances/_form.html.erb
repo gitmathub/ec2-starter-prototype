@@ -1,0 +1,55 @@
+<%= form_for @instance do |f| %>
+ 
+  <% if @instance.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        Please correct <%= pluralize(@instance.errors.count, "error") %>
+      </h2>
+      <ul>
+        <% @instance.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+  <p>
+    <%= f.label :image_id %><br>
+    <%= f.text_field :image_id %>
+  </p>
+
+  <p>
+    <%= f.label :instance_type %><br>
+    <%= f.text_field :instance_type %>
+  </p>
+
+  <p>
+    <%= f.label :region %><br>
+    <%= f.text_field :region %>
+  </p>
+
+  <p>
+    <%= f.label :access_key_id %><br>
+    <%= f.text_field :access_key_id %>
+  </p>
+
+  <p>
+    <%= f.label :secret_access_key %><br>
+    <%= f.password_field :secret_access_key %>
+  </p>
+
+  <p>
+    <%= f.label :linux_user %><br>
+    <%= f.text_field :linux_user %>
+  </p>
+
+  <p>
+    <%= f.label :linux_password %><br>
+    <%= f.password_field :linux_password%>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+ 
+<% end %>

@@ -1,0 +1,48 @@
+<p>
+  <strong>Instance ID:</strong>
+  -
+</p>
+
+<p>
+  <strong>State:</strong>
+  -
+</p>
+
+<p>
+  <strong>Image ID:</strong>
+  <%= @instance.image_id %>
+</p>
+
+<p>
+  <strong>Instance Type:</strong>
+  <%= @instance.instance_type %>
+</p>
+
+<p>
+  <strong>Region:</strong>
+  <%= @instance.instance_type %>
+</p>
+
+<p>
+  <strong>AWS Access Key ID:</strong>
+  <%= @instance.access_key_id%>
+</p>
+
+<p>
+  <strong>AWS Secret Access Key:</strong>
+  <span>*****</span>
+</p>
+
+<p>
+  <strong>Linux User:</strong>
+  <%= @instance.linux_user %>
+</p>
+
+<p>
+  <strong>Linux Password:</strong>
+  <span>*****</span>
+</p>
+
+<%= link_to 'Edit', edit_instance_path(@instance) %> 
+<%= link_to 'Back', instances_path %>
+
