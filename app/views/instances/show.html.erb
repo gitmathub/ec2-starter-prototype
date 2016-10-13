@@ -14,35 +14,28 @@
 </p>
 
 <p>
-  <strong>Key Name:</strong>
-  <%= %>
-</p>
-
-<p>
-  <strong>Security Group:</strong>
-  <%= %>
-</p>
-
-<p>
-  <strong>AWS Access Key ID:</strong>
+  <strong>Access Key ID:</strong>
   <%= @instance.access_key_id%>
 </p>
 
 <p>
-  <strong>AWS Secret Access Key:</strong>
-  <span>*****</span>
+  <strong>Secret Access Key:</strong>
+  <span><%= @instance.secret_access_key %></span>
 </p>
 
 <p>
-  <strong>Linux User:</strong>
-  <%= @instance.linux_user %>
+  <strong>Key Name:</strong>
+  <%= @instance.key_name %>
 </p>
 
 <p>
-  <strong>Linux Password:</strong>
-  <span>*****</span>
+  <strong>Security Group:</strong>
+  <%= @instance.security_group %><br />
+Usually the <i>default</i> group won't work. Check your <a href="https://us-west-2.console.aws.amazon.com/ec2/v2/home?region=us-west-2#SecurityGroups:sort=groupId">Security Groups</a>. An example of a security group is: <i>launch-wizard-1</i>
 </p>
+
+
 
 <%= link_to 'Edit', edit_instance_path(@instance) %> 
 <%= link_to 'Back', instances_path %>
-
+<%= link_to 'Start', start_instance_path(@instance) %>

@@ -13,7 +13,12 @@
   <%= @instance.ip ? @instance.ip : '-' %>
 </p>
 
+If your security options are correct you are in the directory of your pem-filet, you can connect now:<br />
+ssh ec2-user@<%= @instance.ip %> -i <%= @instance.key_name %>.pem -v
+<br />
 
 <%= link_to 'Edit', edit_instance_path(@instance) %> 
 <%= link_to 'Back', instances_path %>
 
+
+Don't forget to termininate you instances with the <a href="ssh ec2-user@54.218.49.230 -i ec2-admin-uswest2.pem -v">AWS console</a>.

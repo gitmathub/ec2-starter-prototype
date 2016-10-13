@@ -50,7 +50,7 @@ class InstancesController < ApplicationController
 
   private
     def instance_params
-      params.require(:instance).permit(:image_id, :instance_type, :region, :access_key_id, :secret_access_key, :linux_user, :linux_password)
+      params.require(:instance).permit(:image_id, :instance_type, :region, :access_key_id, :secret_access_key, :key_name, :security_group)
     end
 
 

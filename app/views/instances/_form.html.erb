@@ -14,38 +14,50 @@
   <% end %>
  
   <p>
-    <%= f.label :image_id %><br>
-    <%= f.text_field :image_id %>
+    <strong><%= f.label :image_id %></strong><br>
+    <%= f.text_field :image_id %><br />
+The <i>Image</i> is the AMI ID. The IDs are changing from time to time. A simple Linux Amazon image is for example: <i>ami-b04e92d0</i>
   </p>
 
   <p>
-    <%= f.label :instance_type %><br>
-    <%= f.text_field :instance_type %>
+   <strong><%= f.label :instance_type %></strong><br>
+    <%= f.text_field :instance_type %><br />
+The <i>Instance Type</i> is the Amazon machine type. A small and cheap instance type would be: <i>t2.micro</i>.
   </p>
 
   <p>
-    <%= f.label :region %><br>
-    <%= f.text_field :region %>
+   <strong><%= f.label :region %></strong><br>
+    <%= f.text_field :region %><br />
+An example for an Amazon <i>Region</i> is: <i>us-west</i>. Don't confuse the region with the availability zone which could be: <i>us-west-2</i>.
   </p>
 
   <p>
-    <%= f.label :access_key_id %><br>
-    <%= f.text_field :access_key_id %>
+    <strong><%= f.label :access_key_id %></strong><br />
+    <%= f.text_field :access_key_id %><br />
+In order to start an instance on Amazon using the Amazon API, it's required to configure an user on Amazon with administrator permissions. These are the steps to do so:</p>
+<ul>
+<li>Define a <a href="https://console.aws.amazon.com/iam/home?region=us-west-2#groups">Group</a></li>
+<li>and assiging it a <a href="https://console.aws.amazon.com/iam/home?region=us-west-2#policies/arn:aws:iam::aws:policy/AmazonEC2FullAccess">full EC2 access</a> policy</li>
+<li>Finally create new <a href="https://console.aws.amazon.com/iam/home?region=us-west-2#policies/arn:aws:iam::aws:policy/AmazonEC2FullAccess">user</a>. Don't forget to tick the <i>Generate an access key for user</i>. Download the <i>access_key</i>, <i>secret_access_key</i> and <i>pem-file</i>.</li>
+</ul>
+<p>Please consider, that the rails database nor rails is save. The installation should be deleted after testing.</p>
+
+  <p>
+    <strong><%= f.label :secret_access_key %></strong><br />
+    <%= f.text_field :secret_access_key %><br />
+See instructions above. The <i>secret_access_key</i> come along with the user <i>access_key</i>. Check the "credentials" of the user.<br />
+Please considere, that the database and rails are not save for holding user credentials. The installation should be deleted after testing.
   </p>
 
   <p>
-    <%= f.label :secret_access_key %><br>
-    <%= f.password_field :secret_access_key %>
+    <strong><%= f.label :key_name %></strong><br />
+    <%= f.text_field :key_name %><br />
+The <i>key_name</i> is identical to the <i>pem-file</i>. Example: the pem-file is <i>ec2-admin-uswest2.pem</i> then the <i>key_name</i> is <i>ec2-admin-uswest2</i>. Without a right <i>key_name</i> the newly created Amazon image won't be configured for the user login.
   </p>
 
   <p>
-    <%= f.label :linux_user %><br>
-    <%= f.text_field :linux_user %>
-  </p>
-
-  <p>
-    <%= f.label :linux_password %><br>
-    <%= f.password_field :linux_password%>
+    <strong><%= f.label :security_group %></strong><br />
+    <%= f.text_field :security_group %>
   </p>
 
   <p>
