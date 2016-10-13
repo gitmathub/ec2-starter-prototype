@@ -1,0 +1,19 @@
+<p>
+  <strong>Instance ID:</strong>
+  <%= @instance.instance_id ? @instance.instance_id : '-' %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @instance.state ? @instance.state : '-' %>
+</p>
+
+<p>
+  <strong>IP Address:</strong>
+  <%= @instance.ip ? @instance.ip : '-' %>
+</p>
+
+
+<%= link_to 'Edit', edit_instance_path(@instance) %> 
+<%= link_to 'Back', instances_path %>
+

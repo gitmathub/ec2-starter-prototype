@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161011155025) do
+ActiveRecord::Schema.define(version: 20161012120807) do
 
   create_table "instances", force: :cascade do |t|
     t.string   "image_id"
@@ -22,6 +22,9 @@ ActiveRecord::Schema.define(version: 20161011155025) do
     t.string   "linux_password"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+    t.string   "ip"
+    t.string   "instance_id"
+    t.string   "state"
   end
 
 end

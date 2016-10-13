@@ -1,7 +1,7 @@
 class InstancesController < ApplicationController
 
   def index
-   @instances = Instance.all
+    @instances = Instance.all
   end
 
   def show
@@ -41,6 +41,11 @@ class InstancesController < ApplicationController
     @instance.destroy
  
     redirect_to instances_path
+  end
+
+  def start 
+    @instance = Instance.find(params[:id])
+    @instance.start
   end
 
   private

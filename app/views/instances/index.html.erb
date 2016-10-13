@@ -4,22 +4,23 @@
  
 <table>
   <tr>
-    <th>Instance ID</th>
-    <th>Instance Type</th>
-    <th>State</th>
+    <th>Image</th>
+    <th>Type</th>
+    <th>Region</th>
     <th colspan="3"></th>
   </tr>
  
   <% @instances.each do |instance| %>
     <tr>
-      <td> - </td>
+      <td><%= instance.image_id %></td>
       <td><%= instance.instance_type %></td>
-      <td> - </td>
+      <td><%= instance.region %></td>
       <td><%= link_to 'Show', instance_path(instance) %></td>
       <td><%= link_to 'Edit', edit_instance_path(instance) %></td>
-      <td><%= link_to 'Destroy', instance_path(instance),
+      <td><%= link_to 'Delete', instance_path(instance),
               method: :delete,
               data: { confirm: 'Are you sure?' } %></td>
+      <td><%= link_to 'Start', start_instance_path(instance) %></td>
     </tr>
   <% end %>
 </table>

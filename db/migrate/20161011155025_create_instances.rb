@@ -1,4 +1,5 @@
 class CreateInstances < ActiveRecord::Migration[5.0]
+  # FIXME: testing database has no type: password. find better solution...
   def change
     create_table :instances do |t|
       t.string :image_id
